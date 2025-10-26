@@ -1,0 +1,212 @@
+/* ===== TIPOGRAFIA ===== */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+/* ===== PALETA ===== */
+:root {
+  --bg: #0f0e17;
+  --lilac: #9b6df0;
+  --lilac-light: #cbb3ff;
+  --ice: #f6f5fb;
+  --silver: #d9d9e8;
+  --soft: #ffffff;
+  --radius: 18px;
+  --shadow: 0 12px 40px rgba(0, 0, 0, .45);
+  --maxw: 820px;
+  --green: #22c55e;
+  --green-glow: rgba(34, 197, 94, .35);
+}
+
+/* ===== BASE ===== */
+* {
+  box-sizing: border-box
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ice);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.65;
+}
+
+section {
+  padding: 60px 22px;
+  max-width: var(--maxw);
+  margin: auto;
+  position: relative
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", serif;
+  margin: 0 0 14px;
+  line-height: 1.15
+}
+
+h1 {
+  font-size: clamp(32px, 5.2vw, 46px);
+  color: var(--soft)
+}
+
+h2 {
+  font-size: clamp(26px, 4.5vw, 34px);
+  color: var(--lilac-light)
+}
+
+h3 {
+  font-size: clamp(19px, 4vw, 26px);
+  color: var(--lilac)
+}
+
+p {
+  font-size: clamp(15px, 3.6vw, 18px);
+  color: var(--silver);
+  margin: 10px 0
+}
+
+/* ===== FUNDO MÍSTICO ===== */
+section:nth-of-type(odd) {
+  background: radial-gradient(circle at 50% 0%, rgba(155, 109, 240, .18), rgba(0, 0, 0, 0)),
+    radial-gradient(circle at 50% 120%, rgba(203, 179, 255, .08), rgba(0, 0, 0, 0));
+}
+
+section:nth-of-type(even) {
+  background: radial-gradient(circle at 0% 40%, rgba(155, 109, 240, .14), rgba(0, 0, 0, 0)),
+    radial-gradient(circle at 100% 60%, rgba(155, 109, 240, .10), rgba(0, 0, 0, 0));
+}
+
+/* ===== HERO ===== */
+#hero {
+  text-align: center
+}
+
+#hero p:first-child {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--lilac-light);
+  color: var(--lilac-light);
+  font-weight: 700;
+  font-size: 14px;
+  background: rgba(155, 109, 240, .08);
+  margin-bottom: 14px;
+}
+
+#hero a,
+.btn-comprar {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 16px 28px;
+  border-radius: 999px;
+  color: var(--soft);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  border: none;
+  transition: .2s ease;
+}
+
+#hero a:hover,
+.btn-comprar:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px)
+}
+
+/* ===== LISTAS ===== */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0
+}
+
+ul li {
+  display: flex;
+  gap: 10px;
+  margin: 8px 0;
+  color: var(--ice)
+}
+
+ul li::before {
+  content: "✦";
+  color: var(--lilac-light);
+  font-family: "Playfair Display", serif;
+  font-size: 16px;
+  margin-top: 2px;
+}
+
+/* ===== CTA GENÉRICO ===== */
+section a,
+.btn-comprar {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 14px 22px;
+  border-radius: 999px;
+  background: var(--lilac);
+  color: var(--soft);
+  font-weight: 700;
+  text-transform: uppercase;
+  box-shadow: 0 0 16px rgba(155, 109, 240, .35);
+}
+
+section a:hover {
+  filter: brightness(1.1)
+}
+
+/* ===== DEPOIMENTOS ===== */
+#depoimentos article {
+  padding: 18px 16px;
+  border: 1px solid rgba(155, 109, 240, .35);
+  border-radius: var(--radius);
+  margin-bottom: 16px;
+  background: rgba(255, 255, 255, .03);
+  box-shadow: var(--shadow);
+}
+
+#depoimentos article p {
+  color: var(--lilac-light)
+}
+
+#depoimentos h3 {
+  margin-bottom: 6px
+}
+
+/* ===== SEÇÕES ===== */
+#oferta strong {
+  color: var(--lilac-light)
+}
+
+#faq li strong {
+  color: var(--lilac-light)
+}
+
+#cta-final {
+  text-align: center
+}
+
+/* ===== FOOTER ===== */
+footer {
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--silver);
+  font-size: 14px;
+  border-top: 1px solid rgba(255, 255, 255, .08);
+}
+
+/* ===== ALINHAMENTO DE BOTÕES ===== */
+.btn-comprar {
+  display: block;
+  /* permite centralizar com margin auto */
+  width: max-content;
+  /* encolhe ao conteúdo para centralizar melhor */
+  margin: 16px auto 0;
+  /* centraliza horizontalmente em todas as seções */
+  background: var(--green);
+  box-shadow: 0 0 16px var(--green-glow);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  border: none;
+  transition: .2s ease;
+}
